@@ -1,2 +1,2 @@
-rootProject.name = "AdventOfCode-StarterKit"
+rootProject.name = "AdventOfCode"
 
