@@ -25,10 +25,7 @@ internal class Day02Part1UnitTest {
         @JvmStatic
         fun provide(): Stream<Arguments> {
             return Stream.of(
-                Arguments.of(input_d2_p1_1, result_d2_p1_1),
-                Arguments.of(input_d2_p1_2, result_d2_p1_2),
-                Arguments.of(input_d2_p1_3, result_d2_p1_3),
-                Arguments.of(exercise_d2_p1, -1),
+                Arguments.of(exercise_d2_p1, 13924),
             )
         }
 
