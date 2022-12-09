@@ -1,4 +1,4 @@
-package fr.o80.aoc.day{d2}
+package day{d2}
 
 class Day{d2} {
 

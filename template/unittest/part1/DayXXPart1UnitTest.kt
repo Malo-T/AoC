@@ -1,6 +1,6 @@
-package fr.o80.aoc.day{d2}.part1
+package day{d2}.part1
 
-import fr.o80.aoc.day{d2}.Day{d2}
+import day{d2}.Day{d2}
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -31,7 +31,6 @@ internal class Day{d2}Part1UnitTest {
                 Arguments.of(exercise_d{d1}_p1, -1),
             )
         }
-
     }
 
 }
