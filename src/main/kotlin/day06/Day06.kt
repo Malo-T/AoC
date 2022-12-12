@@ -1,21 +1,21 @@
 package day06
 
+val allDistinct = { cs: CharSequence -> cs.length == cs.toSet().size }
+
 class Day06 {
 
-    fun parse1(input: String): List<Int> {
-        TODO()
-    }
+    fun part1(parsed: String): Int =
+        parsed.windowedSequence(
+            size = 4,
+            step = 1,
+            partialWindows = false
+        ).indexOfFirst(allDistinct) + 4
 
-    fun part1(parsed: List<Int>): Int {
-        TODO()
-    }
-
-    fun parse2(input: String): List<Int> {
-        TODO()
-    }
-
-    fun part2(parsed: List<Int>): Int {
-        TODO()
-    }
+    fun part2(parsed: String): Int =
+        parsed.windowedSequence(
+            size = 14,
+            step = 1,
+            partialWindows = false
+        ).indexOfFirst(allDistinct) + 14
 
 }
