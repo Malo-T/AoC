@@ -1,4 +1,14 @@
 package day05.part1
 
-const val result_d5_p1_1 = 2
-const val input_d5_p1_1 = """14"""
+const val result_d5_p1_1 = "CMZ"
+val input_d5_p1_1 = """
+|    [D]    
+|[N] [C]    
+|[Z] [M] [P]
+| 1   2   3 
+|
+|move 1 from 2 to 1
+|move 3 from 1 to 3
+|move 2 from 2 to 1
+|move 1 from 1 to 2
+""".trimMargin()
