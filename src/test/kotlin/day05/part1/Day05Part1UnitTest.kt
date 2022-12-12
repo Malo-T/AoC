@@ -15,7 +15,7 @@ internal class Day05Part1UnitTest {
     @MethodSource("provide")
     fun computePart1(input: String, expectedOutput: String) {
         // when
-        val result = day.part1(day.parse1(input))
+        val result = day.part1(day.parse(input))
 
         // then
         assertEquals(expectedOutput, result)

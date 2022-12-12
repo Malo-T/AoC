@@ -13,9 +13,9 @@ internal class Day05Part2UnitTest {
 
     @ParameterizedTest
     @MethodSource("provide")
-    fun computePart2(input: String, expectedOutput: Int) {
+    fun computePart2(input: String, expectedOutput: String) {
         // when
-        val result = day.part2(day.parse2(input))
+        val result = day.part2(day.parse(input))
 
         // then
         assertEquals(expectedOutput, result)
@@ -26,9 +26,7 @@ internal class Day05Part2UnitTest {
         fun provide(): Stream<Arguments> {
             return Stream.of(
                 Arguments.of(input_d5_p2_1, result_d5_p2_1),
-                Arguments.of(input_d5_p2_2, result_d5_p2_2),
-                Arguments.of(input_d5_p2_3, result_d5_p2_3),
-                Arguments.of(exercise_d5_p2, -1),
+                Arguments.of(exercise_d5_p2, "CQQBBJFCS"),
             )
         }
 
