@@ -1,18 +1,18 @@
 package day04
 
-typealias Assignments = Pair<IntRange, IntRange>
+private typealias Assignments = Pair<IntRange, IntRange>
 
-fun String.toIntRange(): IntRange = split("-").map { it.toInt() }.let { it[0]..it[1] }
+private fun String.toIntRange(): IntRange = split("-").map { it.toInt() }.let { it[0]..it[1] }
 
 // anonymous function
-val hasCompleteOverlap = fun(assignments: Assignments): Boolean {
+private val hasCompleteOverlap = fun(assignments: Assignments): Boolean {
     with(assignments) {
         return first.subtract(second).isEmpty() || second.subtract(first).isEmpty()
     }
 }
 
 // lambda
-val hasOverlap = { assignments: Assignments ->
+private val hasOverlap = { assignments: Assignments ->
     assignments.first.intersect(assignments.second).isNotEmpty()
 }
 

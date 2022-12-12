@@ -1,6 +1,6 @@
 package day06
 
-val allDistinct = { cs: CharSequence -> cs.length == cs.toSet().size }
+private val allDistinct = { cs: CharSequence -> cs.length == cs.toSet().size }
 
 class Day06 {
 

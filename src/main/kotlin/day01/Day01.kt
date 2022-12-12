@@ -16,5 +16,4 @@ class Day01 {
             .take(3)
             .sum()
 
-
 }

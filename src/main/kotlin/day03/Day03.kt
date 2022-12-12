@@ -1,8 +1,8 @@
 package day03
 
-val itemPriorities: Map<Char, Int> = (('a'..'z') + ('A'..'Z')).mapIndexed { i, c -> c to i + 1 }.toMap()
+private val itemPriorities: Map<Char, Int> = (('a'..'z') + ('A'..'Z')).mapIndexed { i, c -> c to i + 1 }.toMap()
 
-typealias RuckSack = Pair<Set<Char>, Set<Char>>
+private typealias RuckSack = Pair<Set<Char>, Set<Char>>
 
 class Day03 {
 

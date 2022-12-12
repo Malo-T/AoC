@@ -1,25 +1,16 @@
 package day05
 
-typealias Stack = MutableList<Char>
-typealias Storage = MutableList<Stack>
+import day05.Day05.Step
 
-const val EMPTY = ' '
+private typealias Stack = MutableList<Char>
+private typealias Storage = MutableList<Stack>
 
-data class Step(
-    val amount: Int,
-    val from: Int,
-    val to: Int,
-) {
-    val fromIndex: Int
-        get() = from - 1
-    val toIndex: Int
-        get() = to - 1
-}
+private const val EMPTY = ' '
 
-fun List<String>.indexOfStackNumbers() = indexOfFirst { it.startsWith(" 1") }
+private fun List<String>.indexOfStackNumbers() = indexOfFirst { it.startsWith(" 1") }
 
-val stepRegex = """move (\d+) from (\d+) to (\d+)""".toRegex()
-fun String.toStep() = stepRegex.find(this)!!.groupValues.let { (_, amount, from, to) ->
+private val stepRegex = """move (\d+) from (\d+) to (\d+)""".toRegex()
+private fun String.toStep() = stepRegex.find(this)!!.groupValues.let { (_, amount, from, to) ->
     Step(
         amount = amount.toInt(),
         from = from.toInt(),
@@ -28,7 +19,7 @@ fun String.toStep() = stepRegex.find(this)!!.groupValues.let { (_, amount, from,
 }
 
 // CrateMover 9000 moves one by one
-fun Storage.move(step: Step) {
+private fun Storage.move(step: Step) {
     (0 until step.amount).forEach { _ ->
         this[step.toIndex].add(this[step.fromIndex].last())
         this[step.fromIndex].removeLast()
@@ -36,12 +27,23 @@ fun Storage.move(step: Step) {
 }
 
 // CrateMover 9001 moves by batch
-fun Storage.moveV2(step: Step) {
+private fun Storage.moveV2(step: Step) {
     this[step.toIndex].addAll(this[step.fromIndex].takeLast(step.amount))
     this[step.fromIndex] = this[step.fromIndex].dropLast(step.amount).toMutableList()
 }
 
 class Day05 {
+
+    data class Step(
+        val amount: Int,
+        val from: Int,
+        val to: Int,
+    ) {
+        val fromIndex: Int
+            get() = from - 1
+        val toIndex: Int
+            get() = to - 1
+    }
 
     fun parse(input: String): Pair<Storage, List<Step>> {
         val storage: Storage = input
